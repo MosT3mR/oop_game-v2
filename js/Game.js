@@ -3,6 +3,7 @@
  * Game.js */
 
 const overlay = document.getElementById('overlay')
+const harts = document.getElementById('scoreboard').getElementsByTagName('ol')[0].children
 
 class Game {
  constructor(){
@@ -21,5 +22,20 @@ class Game {
   const theRandomPhrase = this.getRandomPhrase();
   this.activePhrase = theRandomPhrase;
   theRandomPhrase.addPhraseToDisplay();
+ }
+ checkForWin(){
+  const countShow = document.getElementsByClassName('hide')
+  if(countShow.length === 0){
+    return true;
+  } else {
+    return false;
+  }
+ }
+ removeLife(){
+  this.missed += 1;
+  harts[this.missed - 1].querySelector('img').src = 'images/lostHeart.png';
+ }
+ gameOver(){
+   
  }
 }

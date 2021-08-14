@@ -23,4 +23,15 @@ class Phrase {
             }
         });
     }
+    checkLetter(letter){
+        const splitPhrase = this.phrase.split('');
+        return splitPhrase.includes(letter);
+    }
+    showMatchedLetter(letter){
+        const letters = document.getElementsByClassName(letter);
+        for(let i = 0;i < letters.length; i++){
+            letters[i].classList.remove('hide');
+            letters[i].classList.add('show');
+        }
+    }
 }
