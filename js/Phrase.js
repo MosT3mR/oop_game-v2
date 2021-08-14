@@ -8,6 +8,7 @@ class Phrase {
     constructor(phrase){
         this.phrase = phrase.toLowerCase();
     }
+
     addPhraseToDisplay(){
         const splitPhrase = this.phrase.split('');
         splitPhrase.forEach(phraseShow => {
@@ -23,10 +24,12 @@ class Phrase {
             }
         });
     }
+
     checkLetter(letter){
         const splitPhrase = this.phrase.split('');
         return splitPhrase.includes(letter);
     }
+    
     showMatchedLetter(letter){
         const letters = document.getElementsByClassName(letter);
         for(let i = 0;i < letters.length; i++){
